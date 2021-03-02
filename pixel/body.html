@@ -1,0 +1,23 @@
+<!-- script>
+  (function() {
+    var appId = "{{settings.gtmId}}";
+    if (!appId) {
+      console.error('Warning: No APP NAME ID is defined. Please configure it in the apps admin.');
+      return
+    }
+
+    // Add script here
+  })()
+</script -->
+
+
+  <!-- Inicio del código de Calixta Chat, pegar al final del body de la página  -->
+  <script>
+    !function(){var w=window,d=document;function fx(){window.CalixtaChat.launch(
+    {appName:"gruporoga",accessKey:"641335108086652"})}s=d.createElement("script"
+    ),s.src="https://calixtachat.s3.amazonaws.com/v1/calixtachat.min.js",s.type=
+    "text/javascript",document.getElementsByTagName("head")[0].appendChild(s),w.
+    attachEvent?w.attachEvent("onload",fx):w.addEventListener("load",fx,!1)}();
+  </script>
+
+  
