@@ -54,53 +54,56 @@
   <script>
     $(window).on("load", botonCotizar);
     function botonCotizar(){
-      $(".vtex-order-placed-2-x-section--confirmation").append("<div id='formaPago' class='formaPago'><div><div></div></div></div>")
-      $(".formaPago").append(function(n) {
-        for (var orderNumber, params = window.location.search.split("&"), i = 0; i < params.length; i++) - 1 != params[i].indexOf("og=") && (orderNumber = params[i].split("=")[1]);
-        $.get("/api/checkout/pub/orders/order-group/" + orderNumber, function(a) {
-          var c = a[0].paymentData.transactions[0].payments[0].connectorResponses.acquirer,
-            b = a[0].paymentData.transactions[0].payments[0].connectorResponses.nsu;
-          a = a[0].paymentData.transactions[0].payments[0].paymentSystemName; - 1 != c.indexOf("Conekta") && (-1 != a.indexOf("OXXO") && (b = b.split("|"), $(".cf.br2.pa4.cconf-alert.ba.b--light-silver.bg-washed-green").prepend('<div style="text-align: center; margin-bottom: 16px"><img style="width:auto;" src="https://conektamx.vtexcommercestable.com.br//arquivos/oxxopay-brand.png" /></div>'),
-              $(".formaPago div div").append('<div style="margin-top: 16px;text-align: center">\
-                                                <h4>REFERENCIA</h4><div style="display:inline-block; padding: 8px 48px; border: 1px solid #AAA">\
-                                                <h4>' + b[0].match(/.{1,4}/g).join("-") + '</h4>\
-                                                <img style="width: 150px" src="' + (1 < b.length ? b[1] : "") + '" />\
+      setTimeout(() => {
+        $(".vtex-order-placed-2-x-section--confirmation").append("<div id='formaPago' class='formaPago'><div><div></div></div></div>")
+        $(".formaPago").append(function(n) {
+          for (var orderNumber, params = window.location.search.split("&"), i = 0; i < params.length; i++) - 1 != params[i].indexOf("og=") && (orderNumber = params[i].split("=")[1]);
+          $.get("/api/checkout/pub/orders/order-group/" + orderNumber, function(a) {
+            var c = a[0].paymentData.transactions[0].payments[0].connectorResponses.acquirer,
+              b = a[0].paymentData.transactions[0].payments[0].connectorResponses.nsu;
+            a = a[0].paymentData.transactions[0].payments[0].paymentSystemName; - 1 != c.indexOf("Conekta") && (-1 != a.indexOf("OXXO") && (b = b.split("|"), $(".cf.br2.pa4.cconf-alert.ba.b--light-silver.bg-washed-green").prepend('<div style="text-align: center; margin-bottom: 16px"><img style="width:auto;" src="https://conektamx.vtexcommercestable.com.br//arquivos/oxxopay-brand.png" /></div>'),
+                $(".formaPago div div").append('<div style="margin-top: 16px;text-align: center">\
+                                                  <h4>REFERENCIA</h4><div style="display:inline-block; padding: 8px 48px; border: 1px solid #AAA">\
+                                                  <h4>' + b[0].match(/.{1,4}/g).join("-") + '</h4>\
+                                                  <img style="width: 150px" src="' + (1 < b.length ? b[1] : "") + '" />\
+                                                </div>\
                                               </div>\
-                                            </div>\
-                                            <div  style="margin-top: 16px; padding-left: 80px; padding-right: 80px;" >\
-                                              <h5>INSTRUCCIONES</h5>\
-                                              <ol>\
-                                                <li>Acude a la tienda OXXO más cercana.</li>\
-                                                <li>Indica en caja que quieres realizar un pago de <b>OXXOPay.</b></li>\
-                                                <li>Dicta al cajero el núamero de referencia de esta ficha para que la tecleé directamente en la pantalla de venta.</li>\
-                                                <li>Realiza el pago correspondiente con dinero en efectivo.</li>\
-                                                <li>Al confirmar tu pago, el cajero te entregará un comprobante impreso. <b>En él podrás verificar que se haya realizado correctamente. </b> Conserva este comprobante de pago.</li>\
-                                              </ol>\
-                                            </div>')),
-            -1 != a.indexOf("spei") && ($('.formaPago').prepend(' <div style="text-align: center; margin-bottom: 16px">\
-                                                                    <img src="https://conektamx.vtexcommercestable.com.br//arquivos/spei-brand.png" />\
-                                                                  </div>'),
-                                                                  $('.cf.br2.pa4.cconf-alert.ba.b--light-silver.bg-washed-green div div').append('<div style="margin-top: 16px;text-align: center">\
-                                                                                                                                                    <h4>CLABE</h4>\
-                                                                                                                                                    <div style="display:inline-block; padding: 8px 48px; border: 1px solid #AAA">\
-                                                                                                                                                      <h4>' + b + '</h4>\
+                                              <div  style="margin-top: 16px; padding-left: 80px; padding-right: 80px;" >\
+                                                <h5>INSTRUCCIONES</h5>\
+                                                <ol>\
+                                                  <li>Acude a la tienda OXXO más cercana.</li>\
+                                                  <li>Indica en caja que quieres realizar un pago de <b>OXXOPay.</b></li>\
+                                                  <li>Dicta al cajero el núamero de referencia de esta ficha para que la tecleé directamente en la pantalla de venta.</li>\
+                                                  <li>Realiza el pago correspondiente con dinero en efectivo.</li>\
+                                                  <li>Al confirmar tu pago, el cajero te entregará un comprobante impreso. <b>En él podrás verificar que se haya realizado correctamente. </b> Conserva este comprobante de pago.</li>\
+                                                </ol>\
+                                              </div>')),
+              -1 != a.indexOf("spei") && ($('.formaPago').prepend(' <div style="text-align: center; margin-bottom: 16px">\
+                                                                      <img src="https://conektamx.vtexcommercestable.com.br//arquivos/spei-brand.png" />\
+                                                                    </div>'),
+                                                                    $('.cf.br2.pa4.cconf-alert.ba.b--light-silver.bg-washed-green div div').append('<div style="margin-top: 16px;text-align: center">\
+                                                                                                                                                      <h4>CLABE</h4>\
+                                                                                                                                                      <div style="display:inline-block; padding: 8px 48px; border: 1px solid #AAA">\
+                                                                                                                                                        <h4>' + b + '</h4>\
+                                                                                                                                                        </div>\
                                                                                                                                                       </div>\
-                                                                                                                                                    </div>\
-                                                                                                                                                    <div style="margin-top: 16px">\
-                                                                                                                                                      <h5>INSTRUCCIONES</h5>\
-                                                                                                                                                      <ol>\
-                                                                                                                                                        <li>Accede a tu banca en línea.</li>\
-                                                                                                                                                        <li>Da de alta la CLABE en esta ficha. <strong>El banco deberá de ser STP</strong>.</li>\
-                                                                                                                                                        <li>Realiza la transferencia correspondiente por la cantidad exacta en esta ficha, <strong>de lo contrario se rechazará el cargo</strong>.</li>\
-                                                                                                                                                        <li>Al confirmar tu pago, el portal de tu banco generará un comprobante digital.</li>\
-                                                                                                                                                      </ol>\
-                                                                                                                                                    </div>')))
-        });
-      })
+                                                                                                                                                      <div style="margin-top: 16px">\
+                                                                                                                                                        <h5>INSTRUCCIONES</h5>\
+                                                                                                                                                        <ol>\
+                                                                                                                                                          <li>Accede a tu banca en línea.</li>\
+                                                                                                                                                          <li>Da de alta la CLABE en esta ficha. <strong>El banco deberá de ser STP</strong>.</li>\
+                                                                                                                                                          <li>Realiza la transferencia correspondiente por la cantidad exacta en esta ficha, <strong>de lo contrario se rechazará el cargo</strong>.</li>\
+                                                                                                                                                          <li>Al confirmar tu pago, el portal de tu banco generará un comprobante digital.</li>\
+                                                                                                                                                        </ol>\
+                                                                                                                                                      </div>')))
+          });
+        })
 
-      $(".vtex-order-placed-2-x-section--confirmation").append("<div id='img-formaPago' class='vtex-order-placed-2-x-confirmationMessage mt5 t-body tc c-muted-1 lh-copy img-formaPago'>\
-                                                                  <img src='/arquivos/logo-pago.png'></img>\
-                                                                </div>");
+        $(".vtex-order-placed-2-x-section--confirmation").append("<div id='img-formaPago' class='vtex-order-placed-2-x-confirmationMessage mt5 t-body tc c-muted-1 lh-copy img-formaPago'>\
+                                                                    <img src='/arquivos/logo-pago.png'></img>\
+                                                                  </div>");
+      }, 3200);
+
 
 
 
