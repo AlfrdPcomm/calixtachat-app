@@ -61,7 +61,7 @@
           console.log(error);
         }
       };
-      }, 2000);
+      }, 100);
     }
 
 
@@ -122,6 +122,9 @@
                                                     <li>Realiza el pago correspondiente con dinero en efectivo.</li>\
                                                     <li>Al confirmar tu pago, el cajero te entregará un comprobante impreso. <b>En él podrás verificar que se haya realizado correctamente. </b> Conserva este comprobante de pago.</li>\
                                                   </ol>\
+                                                </div>\
+                                                <div id="img-formaPago" class="vtex-order-placed-2-x-confirmationMessage mt5 t-body tc c-muted-1 lh-copy img-formaPago">\
+                                                  <img src="/arquivos/logo-pago.png"></img>\
                                                 </div>')),
                 -1 != a.indexOf("spei") && ($('.formaPago').prepend(' <div style="text-align: center; margin-bottom: 16px">\
                                                                         <img src="https://conektamx.vtexcommercestable.com.br//arquivos/spei-brand.png" />\
@@ -144,10 +147,19 @@
             });
           })
 
-          $(".vtex-order-placed-2-x-section--confirmation").append("<div id='img-formaPago' class='vtex-order-placed-2-x-confirmationMessage mt5 t-body tc c-muted-1 lh-copy img-formaPago'>\
-                                                                      <img src='/arquivos/logo-pago.png'></img>\
+        }, 2000);
+
+
+        setTimeout(() => {
+            try {
+              $(".vtex-order-placed-2-x-section--confirmation").append("<div id='img-roga' class='vtex-order-placed-2-x-confirmationMessage mt5 t-body tc c-muted-1 lh-copy img-formaPago'>\
+                                                                      <img src='/arquivos/logo_pasito.png'></img>\
                                                                     </div>");
-        }, 3000);
+            } catch (error) {
+              console.log(error);
+            }
+          }, 2500);
+
       } catch (error) {
         console.log(error);
       }
