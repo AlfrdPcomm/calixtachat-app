@@ -11,6 +11,7 @@
 
 
   <!-- Inicio del código de Calixta Chat, pegar al final del body de la página  -->
+  <script src="/arquivos/jquery.min.js"></script>
   <script>
     !function() {
       var w = window,
@@ -21,92 +22,14 @@
           appName: "gruporoga",
           accessKey: "641335108086652"
         })
-
       }
       s = d.createElement("script"), s.src = "https://calixtachat.s3.amazonaws.com/v1/calixtachat.min.js", s.type =
         "text/javascript", document.getElementsByTagName("head")[0].appendChild(s), w.
       attachEvent ? w.attachEvent("onload", fx) : w.addEventListener("load", fx, !1)
     }();
-
-
     document.getElementsByTagName("head")[0].appendChild(s)
-
-
-    setTimeout(() => {
-        document.body.innerHTML = document.body.innerHTML +
-          '<a href="https://api.whatsapp.com/send/?phone=526144428202&text=%C2%A1TRAMITA+TU+CR%C3%89DITO%21&app_absent=0"><div id="calixta-badge1" class="calixta-style-tab" style="display: block; margin-left: 0px bottom: 90px !important" title="Chatea con nosotros">\
-              <span class="calixta-badge-icon"></span>\
-            <span class="calixta-badge-text"><span class="calixta-mini-icon"></span>\
-            <img class="btn-icon-whatsapp" style="width: 18px;" >\
-            <label class="btn-text-telefono"></label> </span>\
-          </div></a>'
-          // se comento el numereo: 6144428202 de la etiqueta para mostrar solo el icono
-          //se elimino la fuente del icono (con src="") de la  version desktop [ara tomarlo el de la version src="data:image/png;base64,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"mobile, la
-
-
-      }, 1000);
-
   </script>
-
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-
-
   <script>
-<<<<<<< HEAD
-    $(window).on("load", botonCotizar);
-    function botonCotizar(){
-      $(".vtex-order-placed-2-x-section--confirmation").append("<div id='formaPago' class='formaPago'><div><div></div></div></div>")
-      $(".formaPago").append(function(n) {
-        for (var orderNumber, params = window.location.search.split("&"), i = 0; i < params.length; i++) - 1 != params[i].indexOf("og=") && (orderNumber = params[i].split("=")[1]);
-        $.get("/api/checkout/pub/orders/order-group/" + orderNumber, function(a) {
-          var c = a[0].paymentData.transactions[0].payments[0].connectorResponses.acquirer,
-            b = a[0].paymentData.transactions[0].payments[0].connectorResponses.nsu;
-          a = a[0].paymentData.transactions[0].payments[0].paymentSystemName; - 1 != c.indexOf("Conekta") && (-1 != a.indexOf("OXXO") && (b = b.split("|"), $(".cf.br2.pa4.cconf-alert.ba.b--light-silver.bg-washed-green").prepend('<div style="text-align: center; margin-bottom: 16px"><img style="width:auto;" src="https://conektamx.vtexcommercestable.com.br//arquivos/oxxopay-brand.png" /></div>'),
-              $(".formaPago div div").append('<div style="margin-top: 16px;text-align: center">\
-                                                <h4>REFERENCIA</h4><div style="display:inline-block; padding: 8px 48px; border: 1px solid #AAA">\
-                                                <h4>' + b[0].match(/.{1,4}/g).join("-") + '</h4>\
-                                                <img style="width: 150px" src="' + (1 < b.length ? b[1] : "") + '" />\
-                                              </div>\
-                                            </div>\
-                                            <div  style="margin-top: 16px; padding-left: 80px; padding-right: 80px;" >\
-                                              <h5>INSTRUCCIONES</h5>\
-                                              <ol>\
-                                                <li>Acude a la tienda OXXO más cercana.</li>\
-                                                <li>Indica en caja que quieres realizar un pago de <b>OXXOPay.</b></li>\
-                                                <li>Dicta al cajero el núamero de referencia de esta ficha para que la tecleé directamente en la pantalla de venta.</li>\
-                                                <li>Realiza el pago correspondiente con dinero en efectivo.</li>\
-                                                <li>Al confirmar tu pago, el cajero te entregará un comprobante impreso. <b>En él podrás verificar que se haya realizado correctamente. </b> Conserva este comprobante de pago.</li>\
-                                              </ol>\
-                                            </div>')),
-            -1 != a.indexOf("spei") && ($('.formaPago').prepend(' <div style="text-align: center; margin-bottom: 16px">\
-                                                                    <img src="https://conektamx.vtexcommercestable.com.br//arquivos/spei-brand.png" />\
-                                                                  </div>'),
-                                                                  $('.cf.br2.pa4.cconf-alert.ba.b--light-silver.bg-washed-green div div').append('<div style="margin-top: 16px;text-align: center">\
-                                                                                                                                                    <h4>CLABE</h4>\
-                                                                                                                                                    <div style="display:inline-block; padding: 8px 48px; border: 1px solid #AAA">\
-                                                                                                                                                      <h4>' + b + '</h4>\
-                                                                                                                                                      </div>\
-                                                                                                                                                    </div>\
-                                                                                                                                                    <div style="margin-top: 16px">\
-                                                                                                                                                      <h5>INSTRUCCIONES</h5>\
-                                                                                                                                                      <ol>\
-                                                                                                                                                        <li>Accede a tu banca en línea.</li>\
-                                                                                                                                                        <li>Da de alta la CLABE en esta ficha. <strong>El banco deberá de ser STP</strong>.</li>\
-                                                                                                                                                        <li>Realiza la transferencia correspondiente por la cantidad exacta en esta ficha, <strong>de lo contrario se rechazará el cargo</strong>.</li>\
-                                                                                                                                                        <li>Al confirmar tu pago, el portal de tu banco generará un comprobante digital.</li>\
-                                                                                                                                                      </ol>\
-                                                                                                                                                    </div>')))
-        });
-      })
-
-      $(".vtex-order-placed-2-x-section--confirmation").append("<div id='img-formaPago' class='vtex-order-placed-2-x-confirmationMessage mt5 t-body tc c-muted-1 lh-copy img-formaPago'>\
-                                                                  <img src='/arquivos/logo-pago.png'></img>\
-                                                                </div>");
-
-
-
-    }
-=======
     window.onload = function(){
       // botonWhastApp();
       botonCotizar();
@@ -147,7 +70,6 @@
         }
       };
       }, 2000);
->>>>>>> 0.0.17
 
       setTimeout(() => {
 
@@ -160,20 +82,6 @@
       }, 1000);
     }
 
-<<<<<<< HEAD
-
-
-    setTimeout(() => {
-      var anchoVentana = window.innerWidth
-    var element = document.getElementById("calixta-badge1");
-    if(anchoVentana > 600 ){
-        element.classList.remove("calixta-style-icon");
-        element.classList.add("calixta-style-tab");
-      }else {
-        element.classList.remove("calixta-style-tab");
-        element.classList.add("calixta-style-icon");
-      }
-=======
     function botonWhastApp(){
       $('body').append('<a href="https://api.whatsapp.com/send/?phone=526144428202&text=%C2%A1TRAMITA+TU+CR%C3%89DITO%21&app_absent=0"><div id="calixta-badge1" class="calixta-style-tab" style="display: block; margin-left: 0px bottom: 90px !important" title="Chatea con nosotros">\
               <span class="calixta-badge-icon"></span>\
@@ -184,73 +92,96 @@
     }
 
 
->>>>>>> 0.0.17
 
-    }, 1000);
-
-    // setTimeout(() => {
-    //   console.log("HOLA");
-    // }, 3000)
-
-
-    const calixaInteval = setInterval(() => {
-      const calixaElement = document.getElementById("calixta-badge");
-      if(calixaElement){
-        calixaElement.className = "calixta-style-icon";
-        clearInterval(calixaInteval);
-      }
-    }, 1000);
-
-    window.addEventListener('resize', () => {
-      const calixaElement = document.getElementById("calixta-badge");
-      if(calixaElement){
+    function botonCotizar(){
+      try {
         setTimeout(() => {
-          calixaElement.className = "calixta-style-icon";
-        }, 1000);
+          $(".vtex-order-placed-2-x-section--confirmation").append("<div id='formaPago' class='formaPago'><div><div></div></div></div>")
+          $(".formaPago").append(function(n) {
+            for (var orderNumber, params = window.location.search.split("&"), i = 0; i < params.length; i++) - 1 != params[i].indexOf("og=") && (orderNumber = params[i].split("=")[1]);
+            $.get("/api/checkout/pub/orders/order-group/" + orderNumber, function(a) {
+              var c = a[0].paymentData.transactions[0].payments[0].connectorResponses.acquirer,
+                b = a[0].paymentData.transactions[0].payments[0].connectorResponses.nsu;
+              a = a[0].paymentData.transactions[0].payments[0].paymentSystemName; - 1 != c.indexOf("Conekta") && (-1 != a.indexOf("OXXO") && (b = b.split("|"), $(".cf.br2.pa4.cconf-alert.ba.b--light-silver.bg-washed-green").prepend('<div style="text-align: center; margin-bottom: 16px"><img style="width:auto;" src="https://conektamx.vtexcommercestable.com.br//arquivos/oxxopay-brand.png" /></div>'),
+                  $(".formaPago div div").append('<div style="margin-top: 16px;text-align: center">\
+                                                    <h4>REFERENCIA</h4><div style="display:inline-block; padding: 8px 48px; border: 1px solid #AAA">\
+                                                    <h4>' + b[0].match(/.{1,4}/g).join("-") + '</h4>\
+                                                    <img style="width: 150px" src="' + (1 < b.length ? b[1] : "") + '" />\
+                                                  </div>\
+                                                </div>\
+                                                <div  style="margin-top: 16px; padding-left: 80px; padding-right: 80px;" >\
+                                                  <h5>INSTRUCCIONES</h5>\
+                                                  <ol>\
+                                                    <li>Acude a la tienda OXXO más cercana.</li>\
+                                                    <li>Indica en caja que quieres realizar un pago de <b>OXXOPay.</b></li>\
+                                                    <li>Dicta al cajero el número de referencia de esta ficha para que la tecleé directamente en la pantalla de venta.</li>\
+                                                    <li>Realiza el pago correspondiente con dinero en efectivo.</li>\
+                                                    <li>Al confirmar tu pago, el cajero te entregará un comprobante impreso. <b>En él podrás verificar que se haya realizado correctamente. </b> Conserva este comprobante de pago.</li>\
+                                                  </ol>\
+                                                </div>\
+                                                <div id="img-formaPago" class="vtex-order-placed-2-x-confirmationMessage mt5 t-body tc c-muted-1 lh-copy img-formaPago">\
+                                                  <img src="/arquivos/logo-pago.png"></img>\
+                                                </div>')),
+                -1 != a.indexOf("spei") && ($('.formaPago').prepend(' <div style="text-align: center; margin-bottom: 16px">\
+                                                                        <img src="https://conektamx.vtexcommercestable.com.br//arquivos/spei-brand.png" />\
+                                                                      </div>'),
+                                                                      $('.cf.br2.pa4.cconf-alert.ba.b--light-silver.bg-washed-green div div').append('<div style="margin-top: 16px;text-align: center">\
+                                                                                                                                                        <h4>CLABE</h4>\
+                                                                                                                                                        <div style="display:inline-block; padding: 8px 48px; border: 1px solid #AAA">\
+                                                                                                                                                          <h4>' + b + '</h4>\
+                                                                                                                                                          </div>\
+                                                                                                                                                        </div>\
+                                                                                                                                                        <div style="margin-top: 16px">\
+                                                                                                                                                          <h5>INSTRUCCIONES</h5>\
+                                                                                                                                                          <ol>\
+                                                                                                                                                            <li>Accede a tu banca en línea.</li>\
+                                                                                                                                                            <li>Da de alta la CLABE en esta ficha. <strong>El banco deberá de ser STP</strong>.</li>\
+                                                                                                                                                            <li>Realiza la transferencia correspondiente por la cantidad exacta en esta ficha, <strong>de lo contrario se rechazará el cargo</strong>.</li>\
+                                                                                                                                                            <li>Al confirmar tu pago, el portal de tu banco generará un comprobante digital.</li>\
+                                                                                                                                                          </ol>\
+                                                                                                                                                        </div>')))
+            });
+          })
+
+        }, 3200);
+
+
+        setTimeout(() => {
+            try {
+              $(".vtex-order-placed-2-x-section--confirmation").append("<div id='img-roga' class='vtex-order-placed-2-x-confirmationMessage mt5 t-body tc c-muted-1 lh-copy img-formaPago'>\
+                                                                      <img src='/arquivos/logo_pasito.png'></img>\
+                                                                    </div>");
+            } catch (error) {
+              console.log(error);
+            }
+          }, 3300);
+
+      } catch (error) {
+        console.log(error);
       }
-    });
+    }
 
 
-    window.onresize = function(){
 
-      console.log('ok');
-      anchoVentana = window.innerWidth;
-      console.log(anchoVentana)
+  function verificarBotton(){
+    try {
+      var anchoVentana = window.innerWidth
       var element = document.getElementById("calixta-badge1");
       if(anchoVentana > 600 ){
-        var element = document.getElementById("calixta-badge1");
         element.classList.remove("calixta-style-icon");
         element.classList.add("calixta-style-tab");
       }else {
-        var element = document.getElementById("calixta-badge1");
         element.classList.remove("calixta-style-tab");
         element.classList.add("calixta-style-icon");
       }
-
-
-
-      console.log(element);
-
-    };
-
+    } catch (error) {
+      console.log(error);
+    }
+  }
   </script>
 
 
 
-<<<<<<< HEAD
-  <style>
-    /*
-    #calixta-badge.calixta-style-tab{
-      right: revert;
-      margin-left: 25px;
-      font-size: 20px !important;
-    }
-
-    .calixta-webchat{
-      right: revert;
-      margin-left: 25px;
-    }
-=======
 <style>
   /*
   #calixta-badge.calixta-style-tab{
@@ -282,7 +213,6 @@
     padding: 16px 60px;
     z-index: 100;
   }
->>>>>>> 0.0.17
 
   #calixta-badge1.calixta-style-tab {
     right: revert;
@@ -331,68 +261,6 @@
       background-image: url(data:image/png;base64,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);
     }
 
-<<<<<<< HEAD
-    #calixta-badge1.calixta-style-tab {
-      right: revert;
-      margin-left: 25px;
-      font-size: 20px!important;
-    }
-*/
-    #calixta-badge1.calixta-style-tab {
-      position: fixed;
-        bottom: 89px;
-        right: 15px;
-        background:#25d366;
-        color: #fff;
-        width: 60px;
-        height: 60px;
-        overflow: hidden;
-        text-align: center;
-        cursor: pointer;
-        border-radius: 50%;
-        box-sizing: border-box;
-        z-index: 100;
-        background-size: 55%;
-        background-repeat: no-repeat;
-        background-position: 50% 53%;
-        background-image: url(data:image/png;base64,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);
-    }
-
-    @media (max-width: 600px) {
-      #calixta-badge1.calixta-style-icon {
-        position: fixed;
-        bottom: 89px;
-        right: 15px;
-        background:#25d366;
-        color: #fff;
-        width: 60px;
-        height: 60px;
-        overflow: hidden;
-        text-align: center;
-        cursor: pointer;
-        border-radius: 50%;
-        box-sizing: border-box;
-        z-index: 100;
-        background-size: 55%;
-        background-repeat: no-repeat;
-        background-position: 50% 53%;
-        background-image: url(data:image/png;base64,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);
-      }
-
-
-      .btn-text-telefono{
-        display: none;
-      }
-
-      .btn-icon-whatsapp{
-        width: 31px;
-        padding-top: 12px;
-      }
-
-      .btn-icon-whatsapp{
-        display: none;
-      }
-=======
 
     .btn-text-telefono{
       display: none;
@@ -405,19 +273,9 @@
 
     .btn-icon-whatsapp{
       display: none;
->>>>>>> 0.0.17
     }
   }
 
-<<<<<<< HEAD
-    .vtex-store-components-3-x-backToTopButtonContainer{
-      left: 2rem !important;
-    }
-    .vtex-store-components-3-x-backToTopButtonContainer .vtex-button{
-      min-height: 0 !important;
-    }
-    </style>
-=======
   .vtex-store-components-3-x-backToTopButtonContainer{
     left: 2rem !important;
   }
@@ -425,4 +283,3 @@
     min-height: 0 !important;
   }
   </style>
->>>>>>> 0.0.17
